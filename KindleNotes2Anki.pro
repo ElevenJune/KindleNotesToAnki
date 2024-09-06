@@ -11,6 +11,7 @@ CONFIG += c++11
 SOURCES += \
     ClippingParser.cpp \
     DictionnaryWidget.cpp \
+    KindleParser.cpp \
     NetworkManager.cpp \
     main.cpp \
     MainWindow.cpp
@@ -18,6 +19,7 @@ SOURCES += \
 HEADERS += \
     ClippingParser.h \
     DictionnaryWidget.h \
+    KindleParser.h \
     MainWindow.h \
     NetworkManager.h
 
