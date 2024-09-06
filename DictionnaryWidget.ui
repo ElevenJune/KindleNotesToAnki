@@ -36,6 +36,9 @@
     </layout>
    </item>
    <item>
+    <widget class="QPlainTextEdit" name="bookList"/>
+   </item>
+   <item>
     <widget class="QPlainTextEdit" name="definitionTextEdit"/>
    </item>
   </layout>

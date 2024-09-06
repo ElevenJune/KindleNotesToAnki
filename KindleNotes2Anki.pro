@@ -13,15 +13,19 @@ SOURCES += \
     DictionnaryWidget.cpp \
     KindleParser.cpp \
     NetworkManager.cpp \
+    WordManager.cpp \
     main.cpp \
-    MainWindow.cpp
+    MainWindow.cpp \
+    models/BookModel.cpp
 
 HEADERS += \
     ClippingParser.h \
     DictionnaryWidget.h \
     KindleParser.h \
     MainWindow.h \
-    NetworkManager.h
+    NetworkManager.h \
+    WordManager.h \
+    models/BookModel.h
 
 FORMS += \
     DictionnaryWidget.ui \

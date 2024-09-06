@@ -16,6 +16,7 @@ public:
     ~DictionnaryWidget();
 
     void fillDefinition(const QString& word, const QStringList& definitions);
+    void fillBookList();
 
 signals:
     void signalSearchClicked(QString word, bool translation);

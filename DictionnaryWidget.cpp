@@ -1,6 +1,9 @@
 #include "DictionnaryWidget.h"
 #include "ui_DictionnaryWidget.h"
 
+#include "models/BookModel.h"
+#include "WordManager.h"
+
 DictionnaryWidget::DictionnaryWidget(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::DictionnaryWidget)
@@ -26,6 +29,20 @@ void DictionnaryWidget::fillDefinition(const QString &word, const QStringList &d
     {
         te->appendHtml(QString("<u>Définition %0</u></br>").arg(i++));
         te->appendPlainText(def+"\n");
+    }
+}
+
+void DictionnaryWidget::fillBookList()
+{
+    ui->bookList->clear();
+    const QList<BookModel*>& books = WordManager::getInstance().getBooks();
+    for(int i = 0; i < books.count(); ++i){
+        BookModel* bm = books[i];
+        ui->bookList->appendHtml(QString("<strong>%0 - </strong>%1</br>")
+                                     .arg(i)
+                                     .arg(bm->getName()));
+        for(auto& w : bm->getWords())
+            ui->bookList->appendPlainText(QString("     - %0").arg(w->getWord()));
     }
 }
 

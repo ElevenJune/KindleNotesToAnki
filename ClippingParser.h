@@ -4,33 +4,7 @@
 #include <QObject>
 #include <QFile>
 
-class Word{
-public:
-    Word(QString word, QString details):m_word(word),m_details(details){};
-
-    const QString& getWord() const {return m_word;}
-    const QString& getDetails() const {return m_details;}
-
-private:
-    QString m_word;
-    QString m_details;
-};
-
-class Book{
-public:
-    Book();
-
-    const QString& getName() const {return m_name;}
-
-    void addWord(const QString& word, const QString& details);
-    void setName(const QString& name){m_name = name;}
-
-    void printBook();
-
-private:
-    QString m_name;
-    QList<Word> m_words;
-};
+class WordManager;
 
 class ClippingParser : public QObject
 {
@@ -38,19 +12,18 @@ class ClippingParser : public QObject
 public:
     explicit ClippingParser(QObject *parent = nullptr);
 
-    bool readFile();
     void setPath(const QString& path){m_path = path;}
+    bool readFile();
 
+private:
     void addWordToBook(const QString& book, const QString& word, const QString& details);
-
-    void printCollection();
 
 signals:
     void signalFileRead();
 
 private :
     QString   m_path;
-    QList<Book> m_books;
+    WordManager* m_wordManager;
 
 };
 
