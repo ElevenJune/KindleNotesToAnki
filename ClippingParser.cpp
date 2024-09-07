@@ -5,7 +5,7 @@
 
 ClippingParser::ClippingParser(QObject *parent)
     : QObject(parent),
-    m_path("/media/data/Programmation/KindleNotesToAnki/KindleNotes2Anki/clip.txt"),
+    m_path(":/ressources/clip.txt"),
     m_wordManager(&WordManager::getInstance())
 {
 }

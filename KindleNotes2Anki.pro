@@ -25,7 +25,8 @@ HEADERS += \
     MainWindow.h \
     NetworkManager.h \
     WordManager.h \
-    models/BookModel.h
+    models/BookModel.h \
+    utils.h
 
 FORMS += \
     DictionnaryWidget.ui \
@@ -34,7 +35,10 @@ FORMS += \
 TRANSLATIONS += \
     KindleNotes2Anki_en_150.ts
 
+RESOURCES += ressources/ressources.qrc
+
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
+

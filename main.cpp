@@ -5,11 +5,13 @@
 #include "NetworkManager.h"
 #include "ClippingParser.h"
 #include "DictionnaryWidget.h"
+#include "utils.h"
 
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
     MainWindow w;
+    w.setStyleSheet(Utils::readFile(":/ressources/ManjaroMix.qss"));
     w.show();
 
     NetworkManager manager;

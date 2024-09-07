@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/ressources">
+        <file>ManjaroMix.qss</file>
+        <file>clip.txt</file>
+    </qresource>
+</RCC>
